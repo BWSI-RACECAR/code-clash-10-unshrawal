@@ -47,6 +47,7 @@ class Solution:
             if var > 1:
                 res += f"{firstLetter[i]}={var},"
             l.append(firstLetter[i])
+        res = res[:-1]
 
         rhymes = lyric.split(" ")
         l = []
