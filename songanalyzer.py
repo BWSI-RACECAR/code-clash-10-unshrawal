@@ -45,22 +45,21 @@ class Solution:
                 continue
             var = firstLetter.count(firstLetter[i])
             if var > 1:
-                res += f"{firstLetter[i]}={var},"
+                res += f"{firstLetter[i]}={var}, " 
             l.append(firstLetter[i])
-        res = res[:-1]
 
         rhymes = lyric.split(" ")
         l = []
         var = 0
         for i in range(0, len(rhymes)):
-            rhymes[i] = rhymes[i][1:]
+            rhymes[i] = rhymes[i][-3:]
         for i in range(0, len(rhymes)):
             if rhymes[i] in l:
                 continue
             if rhymes.count(rhymes[i]) > 1:
                 var += rhymes.count(rhymes[i]) 
             l.append(rhymes[i])
-        res += f", {var} rhyming words"
+        res += f"{var} rhyming words"
         return res
         # TODO: Write code below to return a string with the solution to the prompt
         pass
